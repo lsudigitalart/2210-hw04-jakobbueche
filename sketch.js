@@ -42,7 +42,7 @@ function draw () {
 /////////////
 
 let x = 20;
-let y = 200;
+let y = 300;
 let img
 let cWhite;
 let cBlack;
@@ -102,6 +102,8 @@ function draw() {
 
   if(c[0] == 255) {
     print("out")
+    x = 20
+    y = 300
   }
 
 }
