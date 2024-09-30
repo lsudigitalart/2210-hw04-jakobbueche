@@ -46,9 +46,10 @@ let y = 300;
 let img
 let cWhite;
 let cBlack;
+let score;
 
 function preload() {
-    img = loadImage('simplemazebam.jpg');
+    img = loadImage('The_Path.jpg');
 }
 
 function setup() {
@@ -62,6 +63,8 @@ function setup() {
   //image(img, 0, 0);
 
   s = 10;
+
+  score = 10
 }
 
 let c;
@@ -99,11 +102,16 @@ function draw() {
   noStroke();
   fill(255);
   circle(x, y, s);
+  fill(0)
+  text(score,450,155)
 
   if(c[0] == 255) {
     print("out")
     x = 20
     y = 300
+    
+
+
   }
 
 }
