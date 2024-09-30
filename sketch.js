@@ -44,12 +44,14 @@ function draw () {
 let x = 20;
 let y = 300;
 let img
+let GameOver
 let cWhite;
 let cBlack;
 let score;
 
 function preload() {
     img = loadImage('The_Path.jpg');
+    //GameOver = loadImage('GameOver.jpg');
 }
 
 function setup() {
@@ -103,13 +105,26 @@ function draw() {
   fill(255);
   circle(x, y, s);
   fill(0)
-  text(score,450,155)
+  //text(score,450,155)
+
+  if(c[0] == 0) {
+
+    textSize(20)
+    text(score,450,155)
+    
+  }
 
   if(c[0] == 255) {
-    print("out")
+    print("out");
     x = 20
     y = 300
-    
+    score -= 1
+    //text(score,450,155)
+
+  if(score <= 0) {
+        img = loadImage('GameOver.jpg')
+        
+  }
 
 
   }
