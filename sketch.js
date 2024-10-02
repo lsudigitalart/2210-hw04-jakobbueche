@@ -50,7 +50,7 @@ let cBlack;
 let score;
 
 function preload() {
-    img = loadImage('PathWithLives.jpg');
+    img = loadImage('PathF.jpg');
     //GameOver = loadImage('GameOver.jpg');
 }
 
@@ -64,9 +64,9 @@ function setup() {
    c = [0, 0, 0, 255]
   //image(img, 0, 0);
 
-  s = 10;
+  s = 9;
 
-  score = 10
+  score = 5
 }
 
 let c;
@@ -77,29 +77,38 @@ function draw() {
     //background(0);
 
   if (keyIsDown(LEFT_ARROW) === true) {
-    x -= 2.5;
+    x -= 2.2;
     c = get(x,y);
     print(c)
   }
 
   if (keyIsDown(RIGHT_ARROW) === true) {
-    x += 2.5;
+    x += 2.2;
     c = get(x,y);
     print(c)
   }
 
   if (keyIsDown(UP_ARROW) === true) {
-    y -= 2.5;
+    y -= 2.2;
     c = get(x,y);
     print(c)
   }
 
   if (keyIsDown(DOWN_ARROW) === true) {
-    y += 2.5;
+    y += 2.2;
     c = get(x,y);
     print(c)
 
   }
+
+  if (c[0] == 20){
+    img = loadImage('WinFinal.jpg')
+
+  }
+
+
+
+
 
   noStroke();
   fill(255);
@@ -107,7 +116,8 @@ function draw() {
   fill(0)
   //text(score,450,155)
 
-  if(c[0] == 0) {
+  //if(c[0] == 0) {
+  if(score >= 0) {
 
     textSize(20)
     text(score,488,157)
